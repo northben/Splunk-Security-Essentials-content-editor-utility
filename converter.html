@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Security Essentials custom content editor</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-8 text-left">
+      <h1>Welcome</h1>
+      <p>Paste the base64 export string from Security Essentials to get started. Then add as many custom use cases as you'd like. When you're finished, copy the new base64 string back to Security Essentials.</p>
+      <p><strong>NOTE: Security Essentials will overwrite existing configurations when the new string is imported!</strong></p>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">base64 string from SSE</span>
+        </div>
+        <textarea class="form-control" id="sse_input" aria-label="base64"></textarea>
+      </div>
+      <br>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">base64 string to import back in SSE</span>
+        </div>
+        <pre id="sse_export" class="form-control"></pre>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="form-group">
+            <label for="name">showcaseId:</label>
+            <input type="text" class="form-control" id="showcaseId" disabled>
+            <label for="name">channel:</label>
+            <input type="text" class="form-control" id="channel">
+            <label for="name">user:</label>
+            <input type="text" class="form-control" id="user">
+            <label for="name">key:</label>
+            <input type="text" class="form-control" id="key" disabled>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="form-group">
+            <label for="name">name:</label>
+            <input type="text" class="form-control" id="name">
+
+            <label for="name">in Splunk:</label>
+            <input type="text" class="form-control" id="inSplunk">
+
+            <label for="name">journey:</label>
+            <input type="text" class="form-control" id="journey">
+
+            <label for="name">use case:</label>
+            <input type="text" class="form-control" id="usecase">
+
+            <label for="name">category:</label>
+            <input type="text" class="form-control" id="category">
+
+            <label for="name">description:</label>
+            <input type="text" class="form-control" id="description">
+
+            <label for="name">domain:</label>
+            <input type="text" class="form-control" id="domain">
+
+            <label for="name">data source categories:</label>
+            <input type="text" class="form-control" id="data_source_categories">
+
+            <label for="name">mitre technique:</label>
+            <input type="text" class="form-control" id="mitre_technique">
+
+            <label for="name">mitre sub technique:</label>
+            <input type="text" class="form-control" id="mitre_sub_technique">
+
+            <label for="name">mitre tactic:</label>
+            <input type="text" class="form-control" id="mitre_tactic">
+          </div>
+        </div>
+      </div>
+      <button id="addCustomUseCaseButton" type="button" class="btn btn-primary">Add custom use case</button>
+      <hr>
+      <label for="unencoded_json">Unencoded JSON</label>
+      <pre class="alert alert-secondary" id="sse_json" style="white-space:pre" id="unencoded_json" disabled></pre>
+    </div>
+  </div>
+</div>
+
+<script src="converter.js"></script>
+</body>
+</html>
